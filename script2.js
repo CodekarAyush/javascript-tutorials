@@ -139,6 +139,47 @@ btn.addEventListener("click",()=>{
   
 nameHeading.textContent = n
 })
+
+
+
+
+
+// call , apply & bind 
+
+const person ={
+  firstname:"ayush",
+  lastname:"kumar"
+}
+function greet(greeting , punct) { 
+
+  console.log(`${greeting}, ${this.firstname} ${this.lastname} ${punct} `);
+  
+  }
+  // call
+greet.call(person,"hello","!")
+
+// apply 
+greet.apply(person,["Hi", "."])
+
+//bind
+const greetPerson = greet.bind(person,"hey")
+greetPerson("? ")
+
+// closure 
+
+function outerFunction(outerVar) {
+  return function innerFunction(innerVar) {
+    console.log(`Outer ${outerVar} , ${innerVar}`);
+    
+  }
+}
+const closure = outerFunction("coder")
+closure("inside")
 */
 
 
+greet()
+function greet() {
+  console.log("hello");
+  
+}
